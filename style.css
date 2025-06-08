@@ -52,8 +52,7 @@ h1 {
 }
 
 .pixel {
-  flex-basis: calc(1 / 16 * 100%);
-  background-color: aqua;
+  background-color: inherit;
   aspect-ratio: 1 / 1;
 }
 

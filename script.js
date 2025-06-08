@@ -1,3 +1,25 @@
 "use strict";
 
-console.log("Test Successful!");
+/**
+ * Creates xRes * yRes div elements with the class="pixel" and appends them to
+ * the #screen element. Sets flex-basis for each .pixel to fit in parent.
+ * @param {int} xRes The horizontal resolution for the .pixels.
+ * @param {*} yRes The vertical resolution for the .pixels.
+ */
+function createPixels(xRes, yRes) {
+  const easScreen = document.querySelector("#screen");
+  const resolution = xRes * yRes;
+  const basis = easScreen.offsetWidth / xRes;
+  for (let i = 0; i < resolution; i++) {
+    const pixel = document.createElement("div");
+    const att = document.createAttribute("class");
+    att.value = "pixel";
+    pixel.setAttributeNode(att);
+    pixel.style.flexBasis = `${basis}px`;
+    easScreen.appendChild(pixel);
+  }
+}
+
+let xRes = 16;
+let yRes = 16;
+createPixels(xRes, yRes);
