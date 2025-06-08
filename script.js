@@ -20,6 +20,24 @@ function createPixels(xRes, yRes) {
   }
 }
 
+/**
+ * Adds the class active to the event's target element
+ * @param {MouseEvent<"mouseover">} event
+ */
+function activatePixel(event) {
+  const att = document.createAttribute("class");
+  att.value = "pixel active";
+  event.target.setAttributeNode(att);
+}
+
 let xRes = 16;
 let yRes = 16;
+
 createPixels(xRes, yRes);
+
+const pixels = document.getElementsByClassName("pixel");
+for (let pixel of pixels) {
+  pixel.addEventListener("mouseover", (event) => {
+    activatePixel(event);
+  });
+}
