@@ -59,3 +59,15 @@ h1 {
 .pixel.active {
   background-color: #201c19;
 }
+
+#options {
+  background-color: #cacbcd;
+  position: absolute;
+  height: 100%;
+  width: 300px;
+  top: 0;
+  left: 0;
+  padding: 10px;
+}
+
+/* todo: style Options section properly */
