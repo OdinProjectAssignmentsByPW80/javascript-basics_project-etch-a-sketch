@@ -1,3 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 html {
   font-family: sans-serif;
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Edu NSW ACT Cursive", cursive;
+  text-align: center;
+  background: linear-gradient(
+    to bottom right,
+    #bf953f,
+    #fcfc6b,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: -1px -1px #fffcde44, 1px 1px #8f6a1955;
+}
+
+#frame {
+  background-color: #b60114;
+  border-radius: 10px;
+  padding: 10px 50px 50px 50px;
+  width: fit-content;
+}
+
+#screen {
+  background-color: #cacbcd;
+  width: 750px;
+  height: 750px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: start;
+}
+
+.pixel {
+  flex-basis: calc(1 / 16 * 100%);
+  background-color: aqua;
+  aspect-ratio: 1 / 1;
+}
+
+.pixel.active {
+  background-color: #201c19;
 }
