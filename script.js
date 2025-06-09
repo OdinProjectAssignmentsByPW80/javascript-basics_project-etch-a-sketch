@@ -16,9 +16,7 @@ function createPixels(xRes, yRes) {
   clearPixels();
   for (let i = 0; i < resolution; i++) {
     const pixel = document.createElement("div");
-    const att = document.createAttribute("class");
-    att.value = "pixel";
-    pixel.setAttributeNode(att);
+    setElementClass(pixel, "pixel");
     pixel.style.flexBasis = `${basis}px`;
     easScreen.appendChild(pixel);
   }
@@ -36,6 +34,17 @@ function clearPixels() {
 }
 
 /**
+ * Applies a class name to an element
+ * @param {HTMLelement} el The element to operate on.
+ * @param {string} className The class name to give the element.
+ */
+function setElementClass(el, className) {
+  const att = document.createAttribute("class");
+  att.value = className;
+  el.setAttributeNode(att);
+}
+
+/**
  * Adds mouseover an event listener that calls activatePixel to each .pixel
  * element
  */
@@ -49,13 +58,11 @@ function addPixelEventListener() {
 }
 
 /**
- * Adds the class active to the event's target element
- * @param {MouseEvent<"mouseover">} event
+ * Adds the class active to the event's target element.
+ * @param {MouseEvent} event The triggered "mouseover" event.
  */
 function activatePixel(event) {
-  const att = document.createAttribute("class");
-  att.value = "pixel active";
-  event.target.setAttributeNode(att);
+  setElementClass(event.target, "pixel active");
 }
 
 // event listener for the resolution submit button
@@ -77,6 +84,21 @@ function setResolution() {
   }
 }
 
-// todo: reset button
+// event listener for the reset button
+const resetBtn = document.querySelector("#clear-btn");
+resetBtn.addEventListener("click", () => {
+  deactivatePixel();
+});
+
+/**
+ * Remove .active from class .pixel class list
+ */
+function deactivatePixel() {
+  const pixels = Array.from(document.getElementsByClassName("active"));
+  pixels.forEach((pixel) => {
+    setElementClass(pixel, "pixel");
+  });
+}
+
 // todo: rainbow mode
 // todo: fade out
