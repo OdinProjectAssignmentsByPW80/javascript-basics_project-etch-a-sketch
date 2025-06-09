@@ -1,5 +1,8 @@
 "use strict";
 
+// global variable for pixel color
+let pixelRGB = "rgb(32, 28, 35)";
+
 // set initial #screen resolution on load
 createPixels(16, 16);
 
@@ -45,24 +48,16 @@ function setElementClass(el, className) {
 }
 
 /**
- * Adds mouseover an event listener that calls activatePixel to each .pixel
- * element
+ * Adds mouseover event listener to each .pixel element. On event calls
+ * setBackgroundColor on event.target.
  */
 function addPixelEventListener() {
   const pixels = document.getElementsByClassName("pixel");
   for (let pixel of pixels) {
     pixel.addEventListener("mouseover", (event) => {
-      activatePixel(event);
+      setBackgroundColor(event.target, pixelRGB);
     });
   }
-}
-
-/**
- * Adds the class active to the event's target element.
- * @param {MouseEvent} event The triggered "mouseover" event.
- */
-function activatePixel(event) {
-  setElementClass(event.target, "pixel active");
 }
 
 // event listener for the resolution submit button
@@ -87,17 +82,44 @@ function setResolution() {
 // event listener for the reset button
 const resetBtn = document.querySelector("#clear-btn");
 resetBtn.addEventListener("click", () => {
-  deactivatePixel();
+  resetPixelColor();
 });
 
 /**
- * Remove .active from class .pixel class list
+ * resets background color of .pixel element
  */
-function deactivatePixel() {
-  const pixels = Array.from(document.getElementsByClassName("active"));
+function resetPixelColor() {
+  const pixels = Array.from(document.getElementsByClassName("pixel"));
   pixels.forEach((pixel) => {
-    setElementClass(pixel, "pixel");
+    setBackgroundColor(pixel, "#cacbcd");
   });
+}
+
+// event listener for the rainbow section
+document.querySelector("#rainbow").addEventListener("click", () => {
+  let selected = document.querySelector(
+    "input[name='rainbow-radio']:checked"
+  ).id;
+  if (selected == "normal") {
+    pixelRGB = "rgb(32, 28, 35)";
+  }
+  if (selected == "rainbow") {
+    pixelRGB = null;
+  }
+});
+
+/**
+ * Sets the background color of an HTMLElement to the rgb() string provided or
+ * calls rainbowColours.rgb() if rgb is null.
+ * @param {HTMLElement} el element to have background color set.
+ * @param {string} rgb rgb(x, x, x) to set color.
+ */
+function setBackgroundColor(el, col) {
+  if (col === null) {
+    el.style.backgroundColor = rainbowColours.rgb();
+  } else {
+    el.style.backgroundColor = col;
+  }
 }
 
 /**
@@ -132,9 +154,8 @@ const rainbowColours = {
     const func = [this.sequence[0][this.currentDirection]];
     const arg = [this.sequence[1][this.currentColor]];
     this[func](arg);
-    return [this.red, this.green, this.blue];
+    return `rgb(${this.red}, ${this.green}, ${this.blue})`;
   },
 };
 
-// todo: rainbow mode
 // todo: fade out

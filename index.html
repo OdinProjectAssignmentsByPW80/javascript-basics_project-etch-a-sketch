@@ -17,7 +17,8 @@
         <h2>Options</h2>
 
         <section id="set-res">
-            <label for="res-input">Set Resolution</label>
+            <h3>Resolution</h3>
+            <label for="res-input">Resolution Value</label><br>
             <input type="text" name="res-input" id="res-input" type="number" value="16">
             <p><em>Sets equal value for both horizontal and vertical resolution.<br>accepts values between 1 and
                     100</em>
@@ -25,7 +26,16 @@
             <button id="res-submit-btn">Submit</button>
         </section>
 
+        <section id="rainbow">
+            <h3>Rainbow Mode</h3>
+            <label for="normal">Normal</label>
+            <input type="radio" id="normal" name="rainbow-radio" checked="checked">
+            <label for="rainbow">Rainbow</label>
+            <input type="radio" name="rainbow-radio" id="rainbow">
+        </section>
+
         <section id="clear">
+            <h3>Clear Screen</h3>
             <button id="clear-btn">Clear</button>
         </section>
 
