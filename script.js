@@ -158,4 +158,15 @@ const rainbowColours = {
   },
 };
 
-// todo: fade out
+// opt toggle event listener
+const toggle = document.querySelector("#opt-toggle");
+toggle.addEventListener("click", () => {
+  const opt = document.querySelector("#opt");
+  if (opt.className == "in") {
+    setElementClass(opt, "out");
+    toggle.innerHTML = "🗙";
+  } else if (opt.className == "out") {
+    setElementClass(opt, "in");
+    toggle.innerHTML = "☰";
+  }
+});

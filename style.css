@@ -56,15 +56,40 @@ h1 {
 }
 
 #opt {
-  background-color: #cacbcd;
+  background-color: #cacbcdaf;
+  box-shadow: 2px 2px 2px rgba(146, 146, 146, 0.514);
   position: absolute;
   height: 100%;
   width: 300px;
   top: 0;
-  left: 0;
   padding: 10px;
+}
+
+#opt.in {
+  left: -285px;
+  transition: left 1s;
+}
+
+#opt.out {
+  left: 0;
+  transition: left 1s;
 }
 
 #opt > * {
   margin-bottom: 25px;
+  margin-right: 25px;
+}
+
+#opt-toggle {
+  margin: 0;
+  float: right;
+  font-size: larger;
+}
+
+#opt-toggle:active {
+  color: #cacbcdaf;
+}
+
+#opt em {
+  font-size: smaller;
 }
