@@ -25,5 +25,20 @@ Key points from the text:
 
 ## Result
 
-*coming so0n*
+Check out the live interactive demo [here &rArr;](https://odinprojectassignmentsbypw80.github.io/javascript-basics_project-etc-a-sketch/)
 
+## Review
+
+Once again fell foul to improper planning, although some aspects were down to a lack of understanding on my part.
+
+I'm not sure why, but I thought one could edit css directly with JavaScript. In retrospect this is obviously not the
+case - JavaScript interacts with the DOM not the css. It can add classes and styles to elements in the DOM, but this
+does not modify the css directly.
+
+The code feels, for want of a better word, 'janky'. The `html` and `css` I let slide as I focused on JavaScript. This is
+going to be a problem for me going forward. I find it difficult to properly focus on all 3 elements one at a time;
+instead either emphasising one to the detriment of the other two or simultaneously editing all three in a somewhat
+chaotic manner.
+
+I should also probably go back to have another look at the different types of functions; focusing on the benefits and
+limitations for each.
