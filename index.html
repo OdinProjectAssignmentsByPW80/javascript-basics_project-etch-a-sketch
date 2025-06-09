@@ -10,12 +10,25 @@
 
 <body>
 
-    <div id="options">
+    <div id="opt">
+
+        <p id="opt-toggle">☰</p>
+
         <h2>Options</h2>
-        <label for="resolution">Set Resolution</label>
-        <input type="text" name="resolution" id="resolution" type="number" value="16">
-        <p><em>accepts values between 1 and 100</em></p>
-        <button id="resolutionSubmit">Submit</button>
+
+        <section id="set-res">
+            <label for="res-input">Set Resolution</label>
+            <input type="text" name="res-input" id="res-input" type="number" value="16">
+            <p><em>Sets equal value for both horizontal and vertical resolution.<br>accepts values between 1 and
+                    100</em>
+            </p>
+            <button id="res-submit-btn">Submit</button>
+        </section>
+
+        <section id="reset">
+            <button id="reset-btn">Reset</button>
+        </section>
+
     </div>
 
 
