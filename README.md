@@ -25,7 +25,7 @@ Key points from the text:
 
 ## Result
 
-Check out the live interactive demo [here &rArr;](https://odinprojectassignmentsbypw80.github.io/javascript-basics_project-etc-a-sketch/)
+Check out the live interactive demo [here &rArr;](https://odinprojectassignmentsbypw80.github.io/javascript-basics_project-etch-a-sketch/)
 
 ## Review
 
