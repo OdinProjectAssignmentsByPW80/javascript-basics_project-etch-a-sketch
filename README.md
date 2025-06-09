@@ -27,6 +27,16 @@ Key points from the text:
 
 Check out the live interactive demo [here &rArr;](https://odinprojectassignmentsbypw80.github.io/javascript-basics_project-etch-a-sketch/)
 
+>[!NOTE]
+> The page does not work properly in Mozilla FireFox (at least not version 139.01 (64-bit), which was up to date at time
+> of writing); although everything seems fine on Google Chrome. This is also respectively true for LibreWolf (using
+> Mozilla's Gecko engine) and Edge (using Google's Blink Engine).
+>
+> As best as I can tell it is something to do with the way the height and width of the .pixel divs are being calculated.
+> They report correctly in the console and inspector rules, but they are wrong on screen and in the layout information.
+>
+> I will bare this in mind for the future. But, I am not prepared to do a workaround at this point.
+
 ## Review
 
 Once again fell foul to improper planning, although some aspects were down to a lack of understanding on my part.
