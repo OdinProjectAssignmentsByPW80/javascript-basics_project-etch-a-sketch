@@ -100,5 +100,41 @@ function deactivatePixel() {
   });
 }
 
+/**
+ * Hacky PoS object to handle cycling through rgb values in a rainbow style.
+ */
+const rainbowColours = {
+  red: 255,
+  green: 0,
+  blue: 0,
+  currentDirection: 0,
+  currentColor: 0,
+  increase: function (col) {
+    this[col] = (Math.ceil(this[col] / 64) + 1) * 64 - 1;
+    if (this[col] == 255) this.nextInSequence();
+  },
+  decrease: function (col) {
+    this[col] = (Math.ceil(this[col] / 64) - 1) * 64;
+    if (this[col] == 0) this.nextInSequence();
+  },
+  sequence: [
+    ["increase", "decrease"],
+    ["green", "red", "blue"],
+  ],
+  nextInSequence: function () {
+    this.currentDirection++;
+    this.currentColor++;
+    if (this.currentDirection == this.sequence[0].length)
+      this.currentDirection = 0;
+    if (this.currentColor == this.sequence[1].length) this.currentColor = 0;
+  },
+  rgb: function () {
+    const func = [this.sequence[0][this.currentDirection]];
+    const arg = [this.sequence[1][this.currentColor]];
+    this[func](arg);
+    return [this.red, this.green, this.blue];
+  },
+};
+
 // todo: rainbow mode
 // todo: fade out

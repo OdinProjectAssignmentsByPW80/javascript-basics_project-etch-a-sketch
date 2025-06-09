@@ -71,3 +71,23 @@ h1 {
 }
 
 /* todo: style Options section properly */
+
+temp {
+  col-01: rgb(255, 0, 0);
+  col-02: rgb(255, 63, 0);
+  col-03: rgb(255, 127, 0);
+  col-04: rgb(255, 191, 0);
+  col-05: rgb(255, 255, 0);
+  col-06: rgb(191, 255, 0);
+  col-07: rgb(127, 255, 0);
+  col-08: rgb(63, 255, 0);
+  col-09: rgb(0, 255, 0);
+  col-10: rgb(0, 255, 63);
+  col-11: rgb(0, 255, 127);
+  col-12: rgb(0, 255, 191);
+  col-13: rgb(0, 255, 255);
+  col-13: rgb(0, 191, 255);
+  col-14: rgb(0, 127, 255);
+  col-14: rgb(0, 63, 255);
+  col-15: rgb(0, 0, 255);
+}
