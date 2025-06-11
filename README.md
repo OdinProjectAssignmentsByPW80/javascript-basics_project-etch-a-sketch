@@ -9,7 +9,7 @@ Completed as part of the **JavaScript Basics** section of the **Foundation Cours
 
 ## Assignment
 
-Full details [available here &rArr;]([./Initial.md](https://www.theodinproject.com/lessons/foundations-etch-a-sketch)).
+Full details [available here &rArr;](https://www.theodinproject.com/lessons/foundations-etch-a-sketch).
 
 Key points from the text:
 
